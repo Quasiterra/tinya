@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/Quasiterra/tinya/core"
 	"github.com/spf13/cobra"
@@ -13,7 +14,12 @@ var testCmd = &cobra.Command{
 	Short: "List all S3 buckets",
 	// Long: "",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(core.ListBuckets())
+		if res, err := core.ListBuckets(); err == nil {
+			fmt.Println(res)
+		} else {
+			fmt.Println(err)
+			os.Exit(1)
+		}
 	},
 }
 
