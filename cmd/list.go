@@ -17,7 +17,7 @@ var testCmd = &cobra.Command{
 		if res, err := core.ListBuckets(); err == nil {
 			fmt.Println(res)
 		} else {
-			fmt.Println(err)
+			fmt.Fprintln(os.Stderr, err)
 			os.Exit(1)
 		}
 	},
