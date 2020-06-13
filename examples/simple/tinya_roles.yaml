@@ -1,0 +1,22 @@
+roles:
+  - name: Data_Engineer_Refinements
+    zones: 
+      - raw: read
+      - staging: write
+      - refined: write
+    include_tags:
+      - 
+    exclude_tags:
+      - 
+  - name: Data_Producer_Sales
+    zones: 
+      - raw: write
+      - staging: read
+      - refined: read
+    include_tags:
+      - cost_center: sales
+    exclude_tags:
+      - 
+  - name: Data_Scientist
+    zones: 
+      - refined

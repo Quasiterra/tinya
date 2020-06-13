@@ -1,0 +1,13 @@
+workspaces:
+  - name: Project1
+    data:
+      - collection: sample_database_1
+        zones: [raw, staging]
+        tables: 
+          - sample_table_1
+    users:
+      - id: John_123
+        role: Data_Engineer
+      - id: Mike_456
+        role: Data_Scientist
+    mash_up_areas:

@@ -1,0 +1,27 @@
+collections:
+  - name: sample_datastore_1
+    bucket: tt-tinya-1
+    prefixes: [simple_1, level_2]
+    tables:
+      - name: sample_table_1
+        type: csv
+        zones: [raw]
+        tags: 
+          - PPI: true
+        columns: 
+          - name: field_1
+            type: string
+          - name: field_2
+            type: string
+      - name: sample_table_2
+        type: json
+        zones: [raw]
+        columns: 
+          - name: field_1
+            type: string
+            tags:
+              - PII: true
+          - name: field_2
+            type: string
+            tags:
+              - Cost_Center: RnD
